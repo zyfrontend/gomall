@@ -1,0 +1,2 @@
+2023-04-12 15:27:33.447 [DEBU] {60f1bb734d1f5517418be30fead04f71} [ 39 ms] [default] [mall] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-04-12 15:27:33.472 [DEBU] {60f1bb734d1f5517418be30fead04f71} [ 24 ms] [default] [mall] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`updated_at`,`sort`,`created_at`,`link`) VALUES('https://wallhaven.cc/w/m3dzw1','2023-04-12 15:27:33',1,'2023-04-12 15:27:33','www.baidu.com') 
