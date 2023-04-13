@@ -1,0 +1,20 @@
+2023-04-13 22:02:22.708 [DEBU] {980e1c996d83551747ccf2768c85d287} [ 68 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-13 22:02:22.718 [DEBU] {980e1c996d83551747ccf2768c85d287} [ 10 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b' LIMIT 1
+2023-04-13 22:02:22.736 [DEBU] {980e1c996d83551747ccf2768c85d287} [ 17 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`inviter_id`,`create_at`,`update_at`) VALUES('0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b','inviterCode','2023-04-13 22:02:22','2023-04-13 22:02:22') 
+2023-04-13 22:02:22.742 [DEBU] {980e1c996d83551747ccf2768c85d287} [  6 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE id=11 LIMIT 1
+2023-04-13 22:36:12.024 [DEBU] {d833171846855517a34a366fbef3030a} [ 32 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-13 22:36:12.030 [DEBU] {d833171846855517a34a366fbef3030a} [  4 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b' LIMIT 1
+2023-04-13 22:36:12.038 [DEBU] {d833171846855517a34a366fbef3030a} [  8 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`inviter_id`,`create_at`,`update_at`) VALUES('0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b','inviterCode','2023-04-13 22:36:12','2023-04-13 22:36:12') 
+2023-04-13 22:36:12.043 [DEBU] {d833171846855517a34a366fbef3030a} [  5 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE id=12 LIMIT 1
+2023-04-13 23:12:49.941 [DEBU] {88c975d6458755172f85aa6552eb0fcb} [ 27 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-13 23:12:49.947 [DEBU] {88c975d6458755172f85aa6552eb0fcb} [  5 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b' LIMIT 1
+2023-04-13 23:12:49.956 [DEBU] {88c975d6458755172f85aa6552eb0fcb} [  8 ms] [default] [bvt] [rows:1  ] SELECT COUNT(1) FROM `user` WHERE id=-100000000
+2023-04-13 23:13:17.063 [DEBU] {d8bcaa254c875517f895de028e4a40a6} [ 50 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-13 23:13:17.070 [DEBU] {d8bcaa254c875517f895de028e4a40a6} [  7 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b' LIMIT 1
+2023-04-13 23:13:17.105 [DEBU] {d8bcaa254c875517f895de028e4a40a6} [ 35 ms] [default] [bvt] [rows:1  ] SELECT COUNT(1) FROM `user` WHERE id=-100000000
+2023-04-13 23:14:11.331 [DEBU] {788f23c9588755177918ee7b6ed91d0a} [ 35 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-13 23:14:11.336 [DEBU] {788f23c9588755177918ee7b6ed91d0a} [  5 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b' LIMIT 1
+2023-04-13 23:14:11.343 [DEBU] {788f23c9588755177918ee7b6ed91d0a} [  6 ms] [default] [bvt] [rows:1  ] SELECT COUNT(1) FROM `user` WHERE id=-100000000
+2023-04-13 23:14:11.359 [DEBU] {788f23c9588755177918ee7b6ed91d0a} [ 16 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`id`,`address`,`inviter_code`,`create_at`,`update_at`,`inviter_id`) VALUES(0,'0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b','','2023-04-13 23:14:11','2023-04-13 23:14:11','') ON DUPLICATE KEY UPDATE `id`=VALUES(`id`),`address`=VALUES(`address`),`inviter_code`=VALUES(`inviter_code`),`update_at`=VALUES(`update_at`),`inviter_id`=VALUES(`inviter_id`)
+2023-04-13 23:15:00.823 [DEBU] {607e9d4e64875517c5111e25d9615ddc} [ 45 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-13 23:15:00.829 [DEBU] {607e9d4e64875517c5111e25d9615ddc} [  5 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x11f3E2F02a85F7965663b2F216A87Ec0D720F65b' LIMIT 1

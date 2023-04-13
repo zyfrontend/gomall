@@ -1,2 +1,615 @@
 2023-04-12 15:27:33.447 [DEBU] {60f1bb734d1f5517418be30fead04f71} [ 39 ms] [default] [mall] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
 2023-04-12 15:27:33.472 [DEBU] {60f1bb734d1f5517418be30fead04f71} [ 24 ms] [default] [mall] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`updated_at`,`sort`,`created_at`,`link`) VALUES('https://wallhaven.cc/w/m3dzw1','2023-04-12 15:27:33',1,'2023-04-12 15:27:33','www.baidu.com') 
+2023-04-12 16:15:50.797 [DEBU] {d030ac0bf0215517722fce034d2460ca} [ 32 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:15:50.806 [ERRO] {d030ac0bf0215517722fce034d2460ca} [  8 ms] [default] [meta_star] [rows:0  ] INSERT INTO `kcode_user`(`address`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+Error: Error 1364: Field 'username' doesn't have a default value
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  learn_goframe01/internal/logic/user.(*sUser).UserLogin
+    /Users/zy/Documents/go/project/learn_goframe01/internal/logic/user/user.go:28
+9.  learn_goframe01/internal/controller.(*vUser).UserCreate
+    /Users/zy/Documents/go/project/learn_goframe01/internal/controller/user.go:16
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-04-12 16:17:36.687 [DEBU] {a08f62b3082255171a155d026adb4d25} [ 27 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:17:36.702 [ERRO] {a08f62b3082255171a155d026adb4d25} [ 15 ms] [default] [meta_star] [rows:0  ] INSERT INTO `kcode_user`(`address`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+Error: Error 1364: Field 'inviters' doesn't have a default value
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  learn_goframe01/internal/logic/user.(*sUser).UserLogin
+    /Users/zy/Documents/go/project/learn_goframe01/internal/logic/user/user.go:28
+9.  learn_goframe01/internal/controller.(*vUser).UserCreate
+    /Users/zy/Documents/go/project/learn_goframe01/internal/controller/user.go:16
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-04-12 16:19:33.177 [DEBU] {d04032d32322551783d15a0508409e26} [ 21 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:19:33.186 [DEBU] {d04032d32322551783d15a0508409e26} [  8 ms] [default] [meta_star] [rows:1  ] INSERT INTO `kcode_user`(`address`,`inviters`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','11111') 
+2023-04-12 16:28:37.213 [DEBU] {b064647da222551703b9a14d27d67d7f} [ 36 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:28:37.266 [ERRO] {b064647da222551703b9a14d27d67d7f} [ 53 ms] [default] [meta_star] [rows:0  ] INSERT INTO `kcode_user`(`address`,`inviters`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','11111') 
+Error: Error 1062: Duplicate entry '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' for key 'kcode_user.address'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  learn_goframe01/internal/logic/user.(*sUser).UserLogin
+    /Users/zy/Documents/go/project/learn_goframe01/internal/logic/user/user.go:25
+9.  learn_goframe01/internal/controller.(*vUser).UserCreate
+    /Users/zy/Documents/go/project/learn_goframe01/internal/controller/user.go:16
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-04-12 16:34:12.783 [DEBU] {e0ae749ff0225517407f034b8d4f0d7e} [ 27 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:34:12.790 [ERRO] {e0ae749ff0225517407f034b8d4f0d7e} [  6 ms] [default] [meta_star] [rows:0  ] INSERT INTO `kcode_user`(`inviters`,`address`) VALUES('11111','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+Error: Error 1062: Duplicate entry '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' for key 'kcode_user.address'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  learn_goframe01/internal/logic/user.(*sUser).UserLogin
+    /Users/zy/Documents/go/project/learn_goframe01/internal/logic/user/user.go:25
+9.  learn_goframe01/internal/controller.(*vUser).UserCreate
+    /Users/zy/Documents/go/project/learn_goframe01/internal/controller/user.go:16
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-04-12 16:53:59.550 [DEBU] {a07749f0042455171636ea5f21926004} [ 27 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:53:59.558 [DEBU] {a07749f0042455171636ea5f21926004} [  7 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:53:59.564 [ERRO] {a07749f0042455171636ea5f21926004} [  5 ms] [default] [meta_star] [rows:0  ] INSERT INTO `kcode_user`(`inviters`,`address`) VALUES('11111','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+Error: Error 1062: Duplicate entry '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' for key 'kcode_user.address'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  learn_goframe01/internal/logic/user.(*sUser).UserLogin
+    /Users/zy/Documents/go/project/learn_goframe01/internal/logic/user/user.go:36
+9.  learn_goframe01/internal/controller.(*vUser).UserCreate
+    /Users/zy/Documents/go/project/learn_goframe01/internal/controller/user.go:16
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-04-12 16:54:16.183 [DEBU] {688b99cf08245517a210df774ca7bb72} [ 29 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:54:16.186 [DEBU] {688b99cf08245517a210df774ca7bb72} [  2 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:54:35.035 [DEBU] {a0c8b0340d245517a310df770c241dd5} [  5 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:54:38.444 [DEBU] {283475fe0d2455179e90273379b8a3fc} [ 28 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:54:38.446 [DEBU] {283475fe0d2455179e90273379b8a3fc} [  2 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:54:59.164 [DEBU] {e8fafcd112245517ab6c0951d9f0d583} [ 20 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:54:59.166 [DEBU] {e8fafcd112245517ab6c0951d9f0d583} [  2 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:56:30.674 [DEBU] {b05e77202824551704f89168893112b0} [ 18 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:56:30.676 [DEBU] {b05e77202824551704f89168893112b0} [  2 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:57:15.597 [DEBU] {2028c3953224551779862b6fdc750a13} [ 23 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:57:15.600 [DEBU] {2028c3953224551779862b6fdc750a13} [  3 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:58:11.504 [DEBU] {181f279a3f2455179196424543b6c10b} [ 23 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:58:11.507 [DEBU] {181f279a3f2455179196424543b6c10b} [  2 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:59:37.984 [DEBU] {a81caebc5324551723ffb553b857c2fe} [ 25 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:59:37.987 [DEBU] {a81caebc5324551723ffb553b857c2fe} [  2 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 16:59:58.320 [DEBU] {a00b1f795824551742dfab2c79a79be9} [ 19 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 16:59:58.324 [DEBU] {a00b1f795824551742dfab2c79a79be9} [  3 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 17:00:09.309 [DEBU] {58c287085b24551742e0e203fca629ca} [ 12 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 17:00:09.313 [DEBU] {58c287085b24551742e0e203fca629ca} [  3 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 17:00:14.042 [DEBU] {c0f247225c245517fa6ec74096f8c183} [ 18 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 17:00:14.045 [DEBU] {c0f247225c245517fa6ec74096f8c183} [  2 ms] [default] [meta_star] [rows:1  ] SELECT COUNT(1) FROM `kcode_user` WHERE `address`='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' AND `inviters`=''
+2023-04-12 17:04:15.072 [DEBU] {f076ba409424551783f79b3965158b51} [ 19 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 17:04:15.075 [ERRO] {f076ba409424551783f79b3965158b51} [  1 ms] [default] [meta_star] [rows:0  ] SELECT `user_id`,`job_id`,`group_id`,`inviter_code`,`user_type`,`address`,`username`,`nickname`,`salt`,`password`,`payword`,`mobile`,`mobile_bind`,`email`,`email_bind`,`avatar`,`reg_ip`,`create_time`,`update_time`,`last_login_ip`,`last_login_time`,`open_time`,`open_status`,`inviter_username`,`inviters`,`inviter_id`,`is_atm`,`is_login`,`login_num`,`age`,`sex`,`avatar_img`,`is_frozen`,`is_del`,`is_team`,`floor`,`zt_num`,`team_num`,`buy_num`,`team_buy_num`,`buy_num_usdt`,`team_buy_num_usdt`,`if_effer`,`is_ad`,`token_buy_num`,`suanli` FROM `kcode_user` WHERE account = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+Error: Error 1054: Unknown column 'account' in 'where clause'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:75
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:152
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:113
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_select.go:492
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_select.go:471
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).One
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_select.go:70
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStruct
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_select.go:129
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_select.go:217
+11. learn_goframe01/internal/logic/user.(*sUser).GetUserByAccount
+    /Users/zy/Documents/go/project/learn_goframe01/internal/logic/user/user.go:47
+12. learn_goframe01/internal/logic/user.(*sUser).UserLogin
+    /Users/zy/Documents/go/project/learn_goframe01/internal/logic/user/user.go:25
+13. learn_goframe01/internal/controller.(*vUser).UserCreate
+    /Users/zy/Documents/go/project/learn_goframe01/internal/controller/user.go:16
+14. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+15. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+18. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+20. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+22. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+26. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+28. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+30. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+32. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-04-12 17:04:52.046 [DEBU] {38450adc9c245517212f056141e85b60} [ 28 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 17:04:52.049 [DEBU] {38450adc9c245517212f056141e85b60} [  2 ms] [default] [meta_star] [rows:1  ] SELECT `user_id`,`job_id`,`group_id`,`inviter_code`,`user_type`,`address`,`username`,`nickname`,`salt`,`password`,`payword`,`mobile`,`mobile_bind`,`email`,`email_bind`,`avatar`,`reg_ip`,`create_time`,`update_time`,`last_login_ip`,`last_login_time`,`open_time`,`open_status`,`inviter_username`,`inviters`,`inviter_id`,`is_atm`,`is_login`,`login_num`,`age`,`sex`,`avatar_img`,`is_frozen`,`is_del`,`is_team`,`floor`,`zt_num`,`team_num`,`buy_num`,`team_buy_num`,`buy_num_usdt`,`team_buy_num_usdt`,`if_effer`,`is_ad`,`token_buy_num`,`suanli` FROM `kcode_user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:08:29.924 [DEBU] {e0808897cf2455175733182e89c3c9e6} [ 12 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 17:08:29.926 [DEBU] {e0808897cf2455175733182e89c3c9e6} [  2 ms] [default] [meta_star] [rows:1  ] SELECT `address`,`user_id` FROM `kcode_user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:10:27.691 [DEBU] {c048b902eb24551760d9a21643179032} [ 16 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 17:10:27.694 [DEBU] {c048b902eb24551760d9a21643179032} [  3 ms] [default] [meta_star] [rows:1  ] SELECT `address`,`user_id` FROM `kcode_user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:11:09.568 [DEBU] {68a44fc3f42455173abe896e64e66d23} [  7 ms] [default] [meta_star] [rows:46 ] SHOW FULL COLUMNS FROM `kcode_user`
+2023-04-12 17:11:09.571 [DEBU] {68a44fc3f42455173abe896e64e66d23} [  2 ms] [default] [meta_star] [rows:1  ] SELECT `address`,`user_id` FROM `kcode_user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:20:51.078 [DEBU] {60a8c2267c255517925ef4172defb640} [ 29 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 17:20:51.081 [DEBU] {60a8c2267c255517925ef4172defb640} [  3 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:20:51.084 [ERRO] {60a8c2267c255517925ef4172defb640} [  3 ms] [default] [bvt] [rows:0  ] INSERT INTO `user`(`address`,`create_at`,`update_at`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','2023-04-12 17:20:51','2023-04-12 17:20:51') 
+Error: Error 1364: Field 'inviter_code' doesn't have a default value
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:202
+8.  learn_goframe01/internal/logic/user.(*sUser).UserLogin
+    /Users/zy/Documents/go/project/learn_goframe01/internal/logic/user/user.go:34
+9.  learn_goframe01/internal/controller.(*vUser).UserCreate
+    /Users/zy/Documents/go/project/learn_goframe01/internal/controller/user.go:16
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-04-12 17:21:49.985 [DEBU] {80c597de89255517efdbb101fa3951c0} [ 16 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 17:21:49.988 [DEBU] {80c597de89255517efdbb101fa3951c0} [  3 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:21:49.993 [DEBU] {80c597de89255517efdbb101fa3951c0} [  5 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 17:21:49','2023-04-12 17:21:49','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 17:23:39.369 [DEBU] {180d8656a325551725ebad78ce5a4a6d} [ 14 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 17:23:39.372 [DEBU] {180d8656a325551725ebad78ce5a4a6d} [  2 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:24:51.968 [DEBU] {6838ef3db425551726ebad78d59d302c} [ 12 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:24:51.973 [DEBU] {6838ef3db425551726ebad78d59d302c} [  4 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`create_at`,`update_at`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','2023-04-12 17:24:51','2023-04-12 17:24:51') 
+2023-04-12 17:26:06.212 [DEBU] {c0b0ec86c5255517efdb6817a6bba474} [ 16 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 17:26:06.214 [DEBU] {c0b0ec86c5255517efdb6817a6bba474} [  2 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:26:06.220 [DEBU] {c0b0ec86c5255517efdb6817a6bba474} [  6 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`update_at`,`address`,`create_at`) VALUES('2023-04-12 17:26:06','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','2023-04-12 17:26:06') 
+2023-04-12 17:36:31.675 [DEBU] {f8764827572655179e86c265616a3371} [ 19 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 17:36:31.678 [DEBU] {f8764827572655179e86c265616a3371} [  3 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:53:02.021 [DEBU] {9830ccbc3d27551737ba5e53328cb0ee} [ 14 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 17:53:02.024 [DEBU] {9830ccbc3d27551737ba5e53328cb0ee} [  2 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:54:40.872 [DEBU] {d8f5f1c05427551738ba5e5373657b51} [ 12 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 17:54:40.878 [DEBU] {d8f5f1c05427551738ba5e5373657b51} [  6 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 17:54:40','2023-04-12 17:54:40','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 18:04:00.597 [DEBU] {58b99812d7275517384fbc64478804c7} [ 20 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 18:04:00.600 [DEBU] {58b99812d7275517384fbc64478804c7} [  2 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:04:00.604 [DEBU] {58b99812d7275517384fbc64478804c7} [  4 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 18:04:00','2023-04-12 18:04:00','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 18:04:39.285 [DEBU] {90393a14e0275517394fbc64481d5a89} [ 27 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:04:53.367 [DEBU] {90f8015de32755173a4fbc64964e3849} [  3 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:04:53.372 [DEBU] {90f8015de32755173a4fbc64964e3849} [  5 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 18:04:53','2023-04-12 18:04:53','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 18:05:50.179 [DEBU] {f8c9bd96f02755173b4fbc6492dc2b3b} [ 12 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:05:50.183 [DEBU] {f8c9bd96f02755173b4fbc6492dc2b3b} [  4 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 18:05:50','2023-04-12 18:05:50','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 18:14:33.238 [DEBU] {1068ee5d6a285517af608c6d7ef37b35} [ 37 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 18:14:33.240 [DEBU] {1068ee5d6a285517af608c6d7ef37b35} [  1 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:16:48.560 [DEBU] {d8f2eee089285517babed042ae1f3ae0} [ 17 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 18:16:48.563 [DEBU] {d8f2eee089285517babed042ae1f3ae0} [  2 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:16:48.568 [DEBU] {d8f2eee089285517babed042ae1f3ae0} [  5 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 18:16:48','2023-04-12 18:16:48','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 18:16:48.570 [DEBU] {d8f2eee089285517babed042ae1f3ae0} [  2 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE id = 8 LIMIT 1
+2023-04-12 18:16:58.300 [DEBU] {30d96d268c285517bbbed0428f68a933} [  2 ms] [default] [bvt] [rows:0  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:16:58.305 [DEBU] {30d96d268c285517bbbed0428f68a933} [  4 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`create_at`,`update_at`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','2023-04-12 18:16:58','2023-04-12 18:16:58') 
+2023-04-12 18:16:58.308 [DEBU] {30d96d268c285517bbbed0428f68a933} [  3 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE id = 9 LIMIT 1
+2023-04-12 18:17:02.265 [DEBU] {00a378128d285517bcbed0427e9b6a4c} [  7 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:17:08.948 [DEBU] {c8030ba18e285517bdbed04211d7e712} [  3 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:20:39.492 [DEBU] {c8a5c4a5bf2855179908500a27419e76} [ 14 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 18:20:39.494 [DEBU] {c8a5c4a5bf2855179908500a27419e76} [  2 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 18:20:42.537 [DEBU] {c09f025cc02855179a08500a53d738c9} [  2 ms] [default] [bvt] [rows:1  ] SELECT `id`,`address`,`inviter_id`,`inviter_code`,`create_at`,`update_at` FROM `user` WHERE address = '0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 21:11:40.143 [DEBU] {209333a2143255172e5f5a636932f96b} [ 48 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 21:11:40.156 [DEBU] {209333a2143255172e5f5a636932f96b} [ 11 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 21:11:40.160 [ERRO] {209333a2143255172e5f5a636932f96b} [  3 ms] [default] [bvt] [rows:0  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 21:11:40','2023-04-12 21:11:40','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+Error: Error 1364: Field 'inviter_code' doesn't have a default value
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:671
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:279
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core_underlying.go:136
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_core.go:448
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).Insert
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/database/gdb/gdb_model_insert.go:193
+8.  learn_goframe01/internal/logic/user.(*sUser).GetUser
+    /Users/zy/Documents/go/learn_goframe01/internal/logic/user/user.go:81
+9.  learn_goframe01/internal/logic/user.(*sUser).UserLogin
+    /Users/zy/Documents/go/learn_goframe01/internal/logic/user/user.go:25
+10. learn_goframe01/internal/controller.(*vUser).UserCreate
+    /Users/zy/Documents/go/learn_goframe01/internal/controller/user.go:16
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:152
+12. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:129
+14. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:75
+15. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+17. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_handler_response.go:25
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:55
+19. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+20. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:54
+21. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+22. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+23. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_middleware_tracing.go:78
+24. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:96
+25. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_func.go:55
+26. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:95
+27. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/util/gutil/gutil.go:56
+28. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_request_middleware.go:49
+29. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/zy/go/pkg/mod/github.com/gogf/gf/v2@v2.3.3/net/ghttp/ghttp_server_handler.go:132
+
+2023-04-12 21:12:43.766 [DEBU] {30a99074233255172f5f5a6398fb9b39} [ 12 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 21:12:43.773 [DEBU] {30a99074233255172f5f5a6398fb9b39} [  6 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 21:12:43','2023-04-12 21:12:43','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 22:17:08.234 [DEBU] {20c12537a7355517e3cb623fd3774a39} [ 40 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:17:08.248 [DEBU] {20c12537a7355517e3cb623fd3774a39} [ 14 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:17:08.255 [DEBU] {20c12537a7355517e3cb623fd3774a39} [  7 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`inviter_code`,`create_at`,`update_at`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','375163','2023-04-12 22:17:08','2023-04-12 22:17:08') 
+2023-04-12 22:18:56.139 [DEBU] {a08b0657c03555178f887c3ae4f6180a} [ 32 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:18:56.143 [DEBU] {a08b0657c03555178f887c3ae4f6180a} [  3 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:19:38.881 [DEBU] {70ceeb4aca35551790887c3a86b09812} [ 32 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:19:39.902 [DEBU] {e8907289ca35551791887c3aff5d09cb} [  4 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:19:40.935 [DEBU] {b0a0e9c6ca35551792887c3a7cc46989} [  6 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:19:41.803 [DEBU] {e068b3faca35551793887c3a86dac1f0} [  5 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:19:42.687 [DEBU] {4007532fcb35551794887c3a987407c4} [  5 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:28:25.518 [DEBU] {c8a2ffe94436551775c61f17b37342b3} [ 12 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:28:25.521 [DEBU] {c8a2ffe94436551775c61f17b37342b3} [  2 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:28:25.530 [DEBU] {c8a2ffe94436551775c61f17b37342b3} [  9 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`create_at`,`update_at`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','2023-04-12 22:28:25','2023-04-12 22:28:25') 
+2023-04-12 22:29:08.260 [DEBU] {0814fcdc4e3655178fce2d705a61819a} [ 24 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:29:08.265 [DEBU] {0814fcdc4e3655178fce2d705a61819a} [  4 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:30:16.779 [DEBU] {3097e8d05e36551733055a53272c7031} [ 25 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:30:16.783 [DEBU] {3097e8d05e36551733055a53272c7031} [  3 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:30:16.799 [DEBU] {3097e8d05e36551733055a53272c7031} [ 16 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`create_at`,`update_at`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','2023-04-12 22:30:16','2023-04-12 22:30:16') 
+2023-04-12 22:30:28.539 [DEBU] {b02e1b8e61365517d4dbe3559687481c} [ 21 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:30:28.544 [DEBU] {b02e1b8e61365517d4dbe3559687481c} [  5 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:31:37.728 [DEBU] {f0b6cbaa71365517490e8169ab0b7456} [ 10 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:31:37.735 [DEBU] {f0b6cbaa71365517490e8169ab0b7456} [  6 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:31:37.746 [DEBU] {f0b6cbaa71365517490e8169ab0b7456} [  9 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`create_at`,`update_at`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','2023-04-12 22:31:37','2023-04-12 22:31:37') 
+2023-04-12 22:33:44.527 [DEBU] {c81754308f365517ae4592334ba6bfe7} [ 15 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:33:44.532 [DEBU] {c81754308f365517ae4592334ba6bfe7} [  5 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:33:44.541 [DEBU] {c81754308f365517ae4592334ba6bfe7} [  9 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 22:33:44','2023-04-12 22:33:44','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 22:34:06.680 [DEBU] {a859865994365517af45923377622079} [  2 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:34:41.560 [DEBU] {a8b4ff779c365517436022316e6c167d} [  9 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:34:41.565 [DEBU] {a8b4ff779c365517436022316e6c167d} [  5 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:34:41.573 [DEBU] {a8b4ff779c365517436022316e6c167d} [  7 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`create_at`,`update_at`,`address`) VALUES('2023-04-12 22:34:41','2023-04-12 22:34:41','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 22:37:07.393 [DEBU] {0822626cbe365517f85dbe1f309418e2} [  8 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:37:07.396 [DEBU] {0822626cbe365517f85dbe1f309418e2} [  3 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:37:07.405 [DEBU] {0822626cbe365517f85dbe1f309418e2} [  9 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`update_at`,`address`,`inviter_id`,`create_at`) VALUES('2023-04-12 22:37:07','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','9e401e','2023-04-12 22:37:07') 
+2023-04-12 22:37:37.287 [DEBU] {e8b52362c5365517d23aa15ae7a84f2d} [ 10 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:37:37.290 [DEBU] {e8b52362c5365517d23aa15ae7a84f2d} [  3 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:37:37.299 [DEBU] {e8b52362c5365517d23aa15ae7a84f2d} [  8 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`address`,`inviter_id`,`create_at`,`update_at`) VALUES('0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62','9e401e','2023-04-12 22:37:37','2023-04-12 22:37:37') 
+2023-04-12 22:57:04.132 [DEBU] {98166e0fd5375517c200803c97c247c8} [ 13 ms] [default] [bvt] [rows:6  ] SHOW FULL COLUMNS FROM `user`
+2023-04-12 22:57:04.136 [DEBU] {98166e0fd5375517c200803c97c247c8} [  3 ms] [default] [bvt] [rows:0  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1
+2023-04-12 22:57:04.149 [DEBU] {98166e0fd5375517c200803c97c247c8} [ 12 ms] [default] [bvt] [rows:1  ] INSERT INTO `user`(`inviter_id`,`create_at`,`update_at`,`address`) VALUES('inviterCode','2023-04-12 22:57:04','2023-04-12 22:57:04','0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62') 
+2023-04-12 22:57:04.152 [DEBU] {98166e0fd5375517c200803c97c247c8} [  3 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE id=10 LIMIT 1
+2023-04-12 22:57:09.416 [DEBU] {38e6bc4ad6375517c300803c9ddb3e0b} [  7 ms] [default] [bvt] [rows:1  ] SELECT * FROM `user` WHERE address='0x691C8DaF43e4F1294A92c3685dE8f1Ae16F8fc62' LIMIT 1

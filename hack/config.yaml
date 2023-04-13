@@ -12,7 +12,7 @@ gfcli:
   # dao生成
   gen:
     dao: # todo 换成自己的数据库
-      - link: "mysql:root:123456@tcp(127.0.0.1:3306)/mall"
+      - link: "mysql:root:123456@tcp(127.0.0.1:3306)/bvt"
         removePrefix: "gf_"
         descriptionTag: true
         noModelComment: true
